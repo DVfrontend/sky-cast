@@ -1,10 +1,8 @@
 import React from "react";
 
-interface Props {
-  data: any;
-}
 
-const WeatherCard: React.FC<Props> = ({ data }) => {
+
+const WeatherCard: React.FC<any> = ({ data }) => {
   const { name, main, weather, wind } = data;
 
   return (
@@ -13,10 +11,10 @@ const WeatherCard: React.FC<Props> = ({ data }) => {
       <p className="text-xl font-semibold">{main.temp}°C</p>
       <p className="italic">{weather[0].description}</p>
       <div className="mt-4 text-sm space-y-1">
-        <p>🌡 Feels like: {main.feels_like}°C</p>
-        <p>💧 Humidity: {main.humidity}%</p>
-        <p>💨 Wind: {wind.speed} m/s</p>
-        <p>📈 Pressure: {main.pressure} hPa</p>
+        <p className="text-2xl">🌡 Feels like: {main.feels_like}°C</p>
+        <p className="text-2xl">💧 Humidity: {main.humidity}%</p>
+        <p className="text-2xl">💨 Wind: {wind.speed} m/s</p>
+        <p className="text-2xl">📈 Pressure: {main.pressure} hPa</p>
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      <h1 className="text-3xl font-bold mb-4 text-center">Sky Cast</h1>
+      <h1 className="text-4xl font-bold mb-4 text-center">Sky Cast</h1>
       <SearchBar onSearch={handleSearch} />
       {weatherData && <WeatherCard data={weatherData} />}
       <Footer />
