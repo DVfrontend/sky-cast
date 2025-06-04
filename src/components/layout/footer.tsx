@@ -2,12 +2,7 @@ import { motion } from "framer-motion";
 
 export const Footer = () => {
   return (
-    <motion.footer
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: "easeInOut" }}
-      className="fixed bottom-0 left-0 right-0 w-full bg-gradient-to-r from-sky-500 via-sky-600 to-sky-700 text-black py-6"
-    >
+    <footer className="fixed bottom-0 left-0 right-0 w-full text-black py-6">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6">
         <motion.div
           whileHover={{ scale: 1.1 }}
@@ -41,6 +36,6 @@ export const Footer = () => {
           </motion.a>
         </motion.div>
       </div>
-    </motion.footer>
+    </footer>
   );
 };
