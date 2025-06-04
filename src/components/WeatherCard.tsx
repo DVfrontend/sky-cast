@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 const WeatherCard: React.FC<any> = ({ data }) => {
   const { name, main, weather, wind } = data;
 

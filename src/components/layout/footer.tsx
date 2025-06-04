@@ -1,17 +1,46 @@
+import { motion } from "framer-motion";
+
 export const Footer = () => {
   return (
-    <footer className="fixed bottom-0 left-0 right-0 w-full bg-[rgb(31,31,31)] text-white py-4">
-      <div className="container mx-auto flex md:flex-row justify-around items-center">
-        <p className="text-sm">© {new Date().getFullYear()} All rights reserved</p>
-        <a
-          href="https://github.com/DVfrontend"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-blue-400 hover:text-blue-300 transition"
+    <motion.footer
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeInOut" }}
+      className="fixed bottom-0 left-0 right-0 w-full bg-gradient-to-r from-sky-500 via-sky-600 to-sky-700 text-black py-6"
+    >
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6">
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.3 }}
+          className="mb-2 md:mb-0 text-center md:text-left"
         >
-          My GitHub
-        </a>
+          <p className="text-base font-medium">
+            ©DV product {new Date().getFullYear()}
+          </p>
+        </motion.div>
+
+        <motion.div className="flex gap-6" initial="hidden" animate="visible">
+          <motion.a
+            href="https://github.com/DVfrontend"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.3 }}
+            transition={{ duration: 0.3 }}
+            className="text-sm"
+          >
+            GitHub
+          </motion.a>
+
+          <motion.a
+            href="mailto:daniel.vartanov81@gmail.com"
+            whileHover={{ scale: 1.3 }}
+            transition={{ duration: 0.3 }}
+            className="text-sm"
+          >
+            Contact
+          </motion.a>
+        </motion.div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };

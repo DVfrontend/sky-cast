@@ -7,7 +7,7 @@ interface Props {
 const SearchBar: React.FC<Props> = ({ onSearch }) => {
   const [city, setCity] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const submit = (e: React.FormEvent) => {
     e.preventDefault();
     if (city.trim()) {
       onSearch(city);
@@ -16,15 +16,16 @@ const SearchBar: React.FC<Props> = ({ onSearch }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2 mb-4">
+    <form onSubmit={submit} className="flex gap-2 mb-4">
       <input
         type="text"
         placeholder="Enter a city name"
         value={city}
         onChange={(e) => setCity(e.target.value)}
-        className="w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm transition"
+        className="w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm transition bg-white/30 backdrop-blur-sm"
       />
-      <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700  transition">
+
+      <button className="flex items-center gap-2 px-4 py-2 text-white rounded-full bg-black transition cursor-pointer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
